@@ -1,0 +1,14 @@
+<script>
+function hitungRisiko() {
+  let lingkar = document.getElementById('lingkar').value;
+  let gender = document.getElementById('gender').value;
+  let hasil = "";
+
+  if ((gender == 'pria' && lingkar > 90) || (gender == 'wanita' && lingkar > 80)) {
+    hasil = "Risiko Tinggi: Segera perbaiki pola makan.";
+  } else {
+    hasil = "Risiko Rendah: Pertahankan gaya hidup sehat!";
+  }
+  document.getElementById('displayHasil').innerText = hasil;
+}
+</script>
