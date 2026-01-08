@@ -10,7 +10,6 @@
             --biru-muda: #e3f2fd;
             --biru-utama: #1976d2;
             --hijau-daun: #4caf50;
-            --oranye-sehat: #ff9800;
             --putih: #ffffff;
             --teks: #333;
             --abu-bg: #f4f7f6;
@@ -35,90 +34,45 @@
         .nav-links { display: flex; list-style: none; gap: 20px; }
         .nav-links a { text-decoration: none; color: var(--teks); font-size: 0.9rem; transition: 0.3s; }
         
-        .dropdown { position: relative; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropbtn { cursor: pointer; border: none; background: none; font-family: inherit; font-size: 0.9rem; font-weight: 400; }
         .dropdown-content {
-            display: none; position: absolute; background: white;
-            min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px;
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
+        .dropdown-content a { color: black; padding: 12px 16px; display: block; border-bottom: 1px solid #eee; }
         .dropdown:hover .dropdown-content { display: block; }
-        .dropdown-content a { padding: 12px 16px; display: block; }
 
         /* --- Hero --- */
         .hero {
-            background: linear-gradient(135deg, var(--biru-muda) 0%, #ffffff 100%);
-            padding: 80px 5%; text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; padding: 80px 5%; text-align: center;
         }
         .hero h1 { color: var(--biru-utama); font-size: 2.2rem; }
         .btn-utama {
             background: var(--hijau-daun); color: white; padding: 12px 30px;
-            border: none; border-radius: 25px; cursor: pointer; text-decoration: none;
-            display: inline-block; font-weight: 600; transition: 0.3s;
+            border: none; border-radius: 25px; cursor: pointer; text-decoration: none; display: inline-block;
         }
-        .btn-utama:hover { transform: scale(1.05); background: #388e3c; }
 
+        /* --- Statistik --- */
+        .stats-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 40px 5%; background: white; }
+        .stat-box { background: var(--biru-muda); padding: 20px; border-radius: 12px; min-width: 150px; text-align: center; }
+        .stat-box h2 { margin: 0; color: var(--biru-utama); }
+
+        /* --- Feature Section --- */
         section { padding: 60px 5%; }
-        .section-title { text-align: center; color: var(--biru-utama); margin-bottom: 40px; }
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--biru-utama); }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        /* --- Fitur: Cek Piringku (Visual Interaktif) --- */
-        .piring-box {
-            background: white; padding: 30px; border-radius: 20px;
-            max-width: 800px; margin: 0 auto; display: flex; align-items: center;
-            gap: 40px; flex-wrap: wrap; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* --- Visualisasi Cek Piringku --- */
+        .piring-box { display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 30px; }
+        .piring-circle {
+            width: 280px; height: 280px; border-radius: 50%; border: 10px solid #ddd;
+            display: flex; flex-wrap: wrap; overflow: hidden; transform: rotate(-45deg);
         }
-        .piring-visual {
-            width: 280px; height: 280px; border-radius: 50%;
-            border: 10px solid #eee; position: relative; overflow: hidden;
-            display: flex; flex-wrap: wrap; transform: rotate(-45deg);
-        }
-        .piring-visual > div { display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; text-align: center; font-size: 0.7rem; transition: 0.5s; }
-        .p-sayur { width: 50%; height: 100%; background: var(--hijau-daun); }
-        .p-karbo { width: 50%; height: 50%; background: var(--oranye-sehat); }
-        .p-protein { width: 50%; height: 50%; background: var(--biru-utama); }
-        .info-piring { flex: 1; min-width: 250px; }
-
-        /* --- Fitur: Kamus Medis --- */
-        .kamus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .kamus-card {
-            background: white; padding: 25px; border-radius: 12px;
-            border-bottom: 4px solid var(--biru-muda); transition: 0.3s;
-        }
-        .kamus-card:hover { border-bottom: 4px solid var(--biru-utama); transform: translateY(-5px); }
-        .kamus-card h3 { color: var(--biru-utama); margin-top: 0; }
-        .tag { background: var(--biru-muda); padding: 2px 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; }
-
-        /* --- Mitos vs Fakta --- */
-        .mf-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .mf-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .mf-mitos { background: #fee2e2; color: #b91c1c; padding: 15px; font-weight: 600; }
-        .mf-fakta { padding: 20px; border-left: 4px solid var(--hijau-daun); }
-
-        footer { background: var(--biru-utama); color: white; text-align: center; padding: 30px; margin-top: 40px; }
-
-        @media (max-width: 600px) { .piring-visual { width: 200px; height: 200px; margin: 0 auto; } }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">🌿 Narasi Edukasi</div>
-        <ul class="nav-links">
-            <li><a href="#">Beranda</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Pusat Penyakit ▾</a>
-                <div class="dropdown-content">
-                    <a href="#">Diabetes</a>
-                    <a href="#">Hipertensi</a>
-                    <a href="#">Obesitas</a>
-                    <a href="#">Kolesterol</a>
-                </div>
-            </li>
-            <li><a href="#piringku">Cek Piringku</a></li>
-            <li><a href="#kamus">Kamus</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <h1>Bentuk Narasi Sehatmu</h1>
-        <p>Edukasi penyakit metabolik dengan cara yang ramah dan menyenangkan.</p>
-        <div style="margin: 30px 0;">
-            <span style="margin
+        .part { display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.8rem; text-align: center; transition: 0.3s; cursor: pointer; }
+        .part:hover { opacity: 0.
