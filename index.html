@@ -3,91 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narasi Edukasi - Cek Kesehatan Mandiri</title>
+    <title>Narasi Edukasi - Solusi Kesehatan Metabolik</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .plate-part { transition: all 0.3s ease; cursor: pointer; }
+        .plate-part:hover { opacity: 0.8; transform: scale(1.02); }
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-emerald-600">Narasi<span class="text-slate-700">Edukasi</span></h1>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#kalkulator" class="hover:text-emerald-600">Kalkulator</a>
-                <a href="#piringku" class="hover:text-emerald-600">Isi Piringku</a>
-                <a href="#kamus" class="hover:text-emerald-600">Kamus Medis</a>
+    <section class="relative bg-emerald-700 text-white py-20 px-6 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <path fill="#FFFFFF" d="M44.7,-76.4C58.1,-69.2,69.2,-57.4,76.4,-44C83.6,-30.6,87,-15.3,85.6,-0.8C84.2,13.7,78,27.3,69.5,38.5C61,49.7,50.1,58.4,38.1,65.8C26,73.1,13,79.1,-0.8,80.5C-14.6,81.8,-29.2,78.6,-41.6,71.5C-54,64.4,-64.1,53.3,-71.4,40.7C-78.7,28,-83.1,14,-83,0C-82.9,-14,-78.3,-28,-70.1,-40.3C-61.9,-52.6,-50.1,-63.1,-37.1,-70.6C-24.1,-78.1,-12,-82.7,2,-86.2C16.1,-89.7,31.3,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        <div class="max-w-5xl mx-auto relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Masa Depan Kesehatan <br>Ada di Tangan Anda</h1>
+            <p class="text-xl md:text-2xl mb-10 text-emerald-100 max-w-2xl mx-auto italic">
+                "Kesehatan metabolik bukan sekadar angka di timbangan, tapi tentang bagaimana sel tubuh Anda menghasilkan energi."
+            </p>
+            <a href="#kalkulator" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl transition transform hover:scale-105 inline-block">
+                Cek Risiko Sekarang <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="bg-white py-12 border-b">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4">
+                    <p class="text-4xl font-bold text-emerald-600 mb-2">1 dari 3</p>
+                    <p class="text-slate-600">Dewasa di Indonesia mengalami **Obesitas Sentral**</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-4xl font-bold text-emerald-600 mb-2">10.8%</p>
+                    <p class="text-slate-600">Prevalensi **Diabetes Melitus** di Indonesia (Kemenkes)</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-4xl font-bold text-emerald-600 mb-2">34.1%</p>
+                    <p class="text-slate-600">Warga Indonesia memiliki **Hipertensi**</p>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <header class="bg-emerald-600 text-white py-16 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Kesehatan Anda, Narasi yang Anda Tulis Sendiri.</h2>
-            <p class="text-lg mb-8 opacity-90">Pahami risiko, atur pola makan, dan kenali tubuhmu lebih dalam.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
-                    <h3 class="text-3xl font-bold">1 dari 10</h3>
-                    <p class="text-sm">Orang Dewasa di Indonesia menderita Diabetes</p>
-                </div>
-                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
-                    <h3 class="text-3xl font-bold">34.1%</h3>
-                    <p class="text-sm">Penduduk dewasa mengalami Hipertensi</p>
-                </div>
-                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
-                    <h3 class="text-3xl font-bold">31%</h3>
-                    <p class="text-sm">Masyarakat mengalami Obesitas Perut</p>
-                </div>
-            </div>
-        </div>
-    </header>
+    <main class="max-w-5xl mx-auto p-6 space-y-24 mt-12">
 
-    <main class="max-w-5xl mx-auto px-4 py-12 space-y-20">
-
-        <section id="kalkulator" class="scroll-mt-20">
+        <section id="pusat-penyakit" class="space-y-8">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-2">Kalkulator Risiko Metabolik</h2>
-                <p class="text-slate-500">Skrining awal berdasarkan faktor risiko umum.</p>
+                <h2 class="text-3xl font-bold text-slate-800">Pusat Informasi Penyakit</h2>
+                <div class="h-1 w-20 bg-emerald-500 mx-auto mt-2"></div>
             </div>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-2xl mx-auto">
-                <form id="riskForm" class="space-y-6">
-                    <div>
-                        <label class="block font-medium mb-2">Usia Anda</label>
-                        <select id="age" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
-                            <option value="0">Dibawah 45 Tahun</option>
-                            <option value="2">45 Tahun ke Atas</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block font-medium mb-2">Lingkar Perut</label>
-                        <select id="waist" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
-                            <option value="0">Normal (Pria < 90cm / Wanita < 80cm)</option>
-                            <option value="4">Buncit (Pria > 90cm / Wanita > 80cm)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block font-medium mb-2">Riwayat Keluarga (Diabetes/Hipertensi)</label>
-                        <select id="family" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
-                            <option value="0">Tidak Ada</option>
-                            <option value="5">Ada (Orang tua/Saudara Kandung)</option>
-                        </select>
-                    </div>
-                    <button type="button" onclick="calculateRisk()" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition">Cek Hasil</button>
-                </form>
-
-                <div id="result" class="mt-8 hidden p-6 rounded-lg text-center">
-                    <h4 class="text-xl font-bold mb-2" id="riskTitle"></h4>
-                    <p id="riskDesc"></p>
+            <div class="grid md:grid-cols-2 gap-8 items-center text-lg leading-relaxed">
+                <div class="bg-emerald-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-4">Apa itu Penyakit Metabolik?</h3>
+                    <p class="text-slate-700 mb-4">
+                        Penyakit metabolik adalah gangguan pada proses pengubahan makanan menjadi energi. Kondisi ini biasanya tidak terjadi tiba-tiba, melainkan akumulasi dari gaya hidup bertahun-tahun.
+                    </p>
+                    <ul class="space-y-3 text-slate-600">
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> <strong>Diabetes Tipe 2:</strong> Tubuh gagal mengelola gula darah.</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> <strong>Dislipidemia:</strong> Kadar lemak darah (kolesterol) tidak normal.</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i> <strong>Perlemakan Hati:</strong> Penumpukan lemak non-alkohol di liver.</li>
+                    </ul>
+                </div>
+                <div class="relative group">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Healthy Lifestyle" class="rounded-2xl shadow-lg transition duration-500 group-hover:scale-105">
                 </div>
             </div>
         </section>
 
-        <section id="piringku" class="scroll-mt-20">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-2">Visualisasi "Isi Piringku"</h2>
-                <p class="text-slate-500">Porsi makan ideal dalam satu piring menurut Kemenkes RI.</p>
+        <section id="lifestyle" class="bg-slate-800 text-white p-10 rounded-3xl shadow-2xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">4 Pilar Gaya Hidup Metabolik</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center p-4 border border-slate-700 rounded-xl hover:bg-slate-700">
+                    <i class="fas fa-running text-3xl text-orange-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Aktif Bergerak</h4>
+                    <p class="text-sm text-slate-300">Minimal 150 menit per minggu aktivitas aerobik.</p>
+                </div>
+                <div class="text-center p-4 border border-slate-700 rounded-xl hover:bg-slate-700">
+                    <i class="fas fa-leaf text-3xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Real Food</h4>
+                    <p class="text-sm text-slate-300">Kurangi makanan olahan (UPF) dan gula tambahan.</p>
+                </div>
+                <div class="text-center p-4 border border-slate-700 rounded-xl hover:bg-slate-700">
+                    <i class="fas fa-bed text-3xl text-blue-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Tidur Cukup</h4>
+                    <p class="text-sm text-slate-300">7-9 jam untuk regulasi hormon lapar (ghrelin/leptin).</p>
+                </div>
+                <div class="text-center p-4 border border-slate-700 rounded-xl hover:bg-slate-700">
+                    <i class="fas fa-brain text-3xl text-purple-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Manajemen Stres</h4>
+                    <p class="text-sm text-slate-300">Kortisol tinggi memicu penumpukan lemak perut.</p>
+                </div>
             </div>
+        </section>
+
+        <section id="kalkulator" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-20">
+            <h2 class="text-2xl font-bold mb-6 text-emerald-700 flex items-center">
+                <span class="mr-2">📊</span> Kalkulator Risiko Metabolik
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block mb-1 font-medium italic">Berapa usia Anda saat ini?</label>
+                        <input type="number" id="age" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="Contoh: 35">
+                    </div>
+                    <div>
+                        <label class="block mb-1 font-medium italic">Lingkar Perut (cm)</label>
+                        <input type="number" id="waist" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="Ukur setinggi pusar">
+                    </div>
+                    <div>
+                        <label class="block mb-1 font-medium italic">Riwayat Diabetes/Hipertensi Keluarga?</label>
+                        <select id="heredity" class="w-full p-2 border rounded-lg">
+                            <option value="no">Tidak Ada</option>
+                            <option value="yes">Ada (Orang Tua/Saudara Kandung)</option>
+                        </select>
+                    </div>
+                    <button onclick="checkRisk()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 shadow-md">Hasil Analisis</button>
+                </div>
+                <div id="risk-result" class="flex flex-col justify-center items-center p-6 bg-slate-50 rounded-xl border-dashed border-2 border-slate-300 text-center">
+                    <p class="text-slate-500">Hasil analisis akan muncul di sini</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="piringku" class="text-center">
+            <h2 class="text-2xl font-bold mb-4 text-emerald-700 italic">🍽️ Visualisasi Isi Piringku</h2>
+            <p class="mb-8 text-slate-600 max-w-xl mx-auto">Standar Kemenkes RI untuk pencegahan penyakit tidak menular.</p>
             
-            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
-                <div class="relative w-64 h-6
+            <div class="flex flex-wrap justify-center gap-12 items-center">
+                <svg width="280" height="280" viewBox="0 0 200 200" class="filter drop-shadow-xl">
+                    <circle cx="100" cy="100" r="95" fill="#ffffff" stroke="#e2e8f0" stroke-width="4"/>
+                    <path d="M 100 100 L 100 5 A 95 95 0 0 1 195 100 Z" fill="#22c55e" class="plate-part" onclick="showPlateInfo('Sayuran', 'Porsi sayuran setara dengan porsi makanan pokok (karbohidrat). Mengenyangkan tanpa kalori berlebih.')"/>
+                    <path d="M 100 100 L 195 100 A 95 95 0 0 1 100 195 Z" fill="#fbbf24" class="plate-part" onclick="showPlateInfo('Makanan Pokok', 'Nasi, jagung, atau ubi. Konsumsi karbohidrat kompleks untuk energi yang stabil.')"/>
+                    <path d="M 100 100 L 100 195 A 95 95 0 0 1 5 100 Z" fill="#ef4444" class="plate-part" onclick="showPlateInfo('Lauk Pauk', 'Protein hewani atau nabati. Penting untuk pemeliharaan otot bagi pegiat olahraga.')"/>
+                    <path d="M 100 100 L 5 100 A 95 95 0 0 1 100 5 Z" fill="#f97316" class="plate-part" onclick="showPlateInfo('Buah-buahan', 'Sumber serat dan vitamin. Sebaiknya dimakan utuh, bukan dijus dengan gula tambahan.')"/>
+                </svg>
+
+                <div id="plate-detail" class="max-w-xs text-left p-6 bg-white rounded-xl shadow-md border-l-8 border-emerald-500 min-h-[160px] flex items-center transition-all duration-300">
+                    <p class="text-slate-500">Klik bagian piring untuk detail porsi makan ideal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kamus" class="pb-20">
+            <h2 class="text-2xl font-bold text-emerald-700 mb-8 flex items-center">
+                <span class="mr-2">📖</span> Kamus Ringkas
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-5 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <h3 class="font-bold text-emerald-600 mb-1">HbA1c</h3>
+                    <p class="text-xs text-slate-600">Rata-rata gula darah dalam 3 bulan terakhir.</p>
+                </div>
+                <div class="p-5 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <h3 class="font-bold text-emerald-600 mb-1">BMI/IMT</h3>
+                    <p class="text-xs text-slate-600">Indeks massa tubuh berdasarkan berat dan tinggi badan.</p>
+                </div>
+                <div class="p-5 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <h3 class="font-bold text-emerald-600 mb-1">HDL</h3>
+                    <p class="text-xs text-slate-600">Kolesterol 'Baik' yang membantu membersihkan lemak darah.</p>
+                </div>
+                <div class="p-5 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <h3 class="font-bold text-emerald-600 mb-1">Metabolisme</h3>
+                    <p class="text-xs text-slate-600">Proses kimia sel mengubah nutrisi menjadi energi.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center">
+        <h2 class="text-white text-xl font-bold mb-4">Narasi Edukasi</h2>
+        <p class="mb-4">Dibuat khusus untuk komunitas penggerak kesehatan.</p>
+        <div class="flex justify-center gap-6 text-xl mb-6">
+            <i class="fab fa-instagram hover:text-white cursor-pointer transition"></i>
+            <i class="fab fa-youtube hover:text-white cursor-pointer transition"></i>
+            <i class="fab fa-whatsapp hover:text-white cursor-pointer transition"></i>
+        </div>
+        <p class="text-xs">&copy; 2024 Narasi Edukasi | Dirancang untuk dampak sosial.</p>
+    </footer>
+
+    <script>
+        function checkRisk() {
+            const waist = document.getElementById('waist').value;
+            const heredity = document.getElementById('heredity').value;
+            const resultDiv = document.getElementById('risk-result');
+            
+            if(!waist) {
+                alert("Masukkan lingkar perut untuk analisis.");
+                return;
+            }
+
+            let riskLevel, colorClass, icon;
+            if(waist > 90 || (waist > 80 && heredity === 'yes')) {
+                riskLevel = "TINGGI";
+                colorClass = "text-red-600";
+                icon = "⚠️";
+            } else if (waist > 80) {
+                riskLevel = "MODERAT";
+                colorClass = "text-orange-500";
+                icon = "🟡";
+            } else {
+                riskLevel = "RENDAH";
+                colorClass = "text-emerald-600";
+                icon = "✅";
+            }
+
+            resultDiv.innerHTML = `
+                <span class="text-4xl mb-2">${icon}</span>
+                <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400">Status Risiko</h3>
+                <p class="text-4xl font-black ${colorClass}">${riskLevel}</p>
+                <p class="text-xs mt-4 text-slate-500 px-4 italic leading-relaxed">Hasil ini bersifat edukasi. Segera lakukan cek lab berkala untuk konfirmasi klinis.</p>
+            `;
+        }
+
+        function showPlateInfo(title, desc) {
+            const detailDiv = document.getElementById('plate-detail');
+            detailDiv.style.opacity = '0';
+            setTimeout(() => {
+                detailDiv.innerHTML = `
+                    <div>
+                        <h3 class="font-bold text-xl text-emerald-700 mb-1">${title}</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">${desc}</p>
+                    </div>
+                `;
+                detailDiv.style.opacity = '1';
+            }, 150);
+        }
+    </script>
+</body>
+</html>
