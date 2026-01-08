@@ -10,14 +10,15 @@
             --biru-muda: #e3f2fd;
             --biru-utama: #1976d2;
             --hijau-daun: #4caf50;
+            --oranye-sehat: #ff9800;
             --putih: #ffffff;
             --teks: #333;
-            --abu-bg: #f9f9f9;
+            --abu-bg: #f4f7f6;
         }
 
         body { font-family: 'Poppins', sans-serif; margin: 0; color: var(--teks); background-color: var(--abu-bg); scroll-behavior: smooth; }
 
-        /* --- Navigasi & Dropdown --- */
+        /* --- Navigasi --- */
         nav {
             background: var(--putih);
             padding: 0 5%;
@@ -34,55 +35,66 @@
         .nav-links { display: flex; list-style: none; gap: 20px; }
         .nav-links a { text-decoration: none; color: var(--teks); font-size: 0.9rem; transition: 0.3s; }
         
-        .dropdown { position: relative; display: inline-block; }
-        .dropbtn { cursor: pointer; border: none; background: none; font-family: inherit; font-size: 0.9rem; }
+        .dropdown { position: relative; }
         .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
+            display: none; position: absolute; background: white;
+            min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px;
         }
-        .dropdown-content a { color: black; padding: 12px 16px; display: block; }
-        .dropdown-content a:hover { background-color: var(--biru-muda); }
         .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { padding: 12px 16px; display: block; }
 
-        /* --- Hero Banner --- */
+        /* --- Hero --- */
         .hero {
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center;
-            padding: 100px 5%; text-align: center;
+            background: linear-gradient(135deg, var(--biru-muda) 0%, #ffffff 100%);
+            padding: 80px 5%; text-align: center;
         }
-        .hero h1 { color: var(--biru-utama); font-size: 2.5rem; margin-bottom: 15px; }
+        .hero h1 { color: var(--biru-utama); font-size: 2.2rem; }
         .btn-utama {
-            background: var(--hijau-daun); color: white; padding: 15px 35px;
-            border: none; border-radius: 30px; font-size: 1.1rem; cursor: pointer;
-            text-decoration: none; display: inline-block; transition: 0.3s;
+            background: var(--hijau-daun); color: white; padding: 12px 30px;
+            border: none; border-radius: 25px; cursor: pointer; text-decoration: none;
+            display: inline-block; font-weight: 600; transition: 0.3s;
         }
-        .btn-utama:hover { background: #388e3c; transform: translateY(-3px); }
+        .btn-utama:hover { transform: scale(1.05); background: #388e3c; }
 
-        /* --- Statistik --- */
-        .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px 5%; background: var(--putih); }
-        .stat-box { text-align: center; padding: 20px; border-radius: 10px; background: var(--biru-muda); }
-        .stat-box h2 { font-size: 2rem; color: var(--biru-utama); margin: 0; }
+        section { padding: 60px 5%; }
+        .section-title { text-align: center; color: var(--biru-utama); margin-bottom: 40px; }
 
-        /* --- Gaya Hidup & Resep --- */
-        .grid-lifestyle { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-        .card-lifestyle { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* --- Fitur: Cek Piringku (Visual Interaktif) --- */
+        .piring-box {
+            background: white; padding: 30px; border-radius: 20px;
+            max-width: 800px; margin: 0 auto; display: flex; align-items: center;
+            gap: 40px; flex-wrap: wrap; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .piring-visual {
+            width: 280px; height: 280px; border-radius: 50%;
+            border: 10px solid #eee; position: relative; overflow: hidden;
+            display: flex; flex-wrap: wrap; transform: rotate(-45deg);
+        }
+        .piring-visual > div { display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; text-align: center; font-size: 0.7rem; transition: 0.5s; }
+        .p-sayur { width: 50%; height: 100%; background: var(--hijau-daun); }
+        .p-karbo { width: 50%; height: 50%; background: var(--oranye-sehat); }
+        .p-protein { width: 50%; height: 50%; background: var(--biru-utama); }
+        .info-piring { flex: 1; min-width: 250px; }
+
+        /* --- Fitur: Kamus Medis --- */
+        .kamus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .kamus-card {
+            background: white; padding: 25px; border-radius: 12px;
+            border-bottom: 4px solid var(--biru-muda); transition: 0.3s;
+        }
+        .kamus-card:hover { border-bottom: 4px solid var(--biru-utama); transform: translateY(-5px); }
+        .kamus-card h3 { color: var(--biru-utama); margin-top: 0; }
+        .tag { background: var(--biru-muda); padding: 2px 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; }
 
         /* --- Mitos vs Fakta --- */
-        .mitos-fakta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .mf-card { background: white; border-radius: 12px; overflow: hidden; border-top: 5px solid var(--biru-utama); }
-        .mf-header { padding: 15px; font-weight: 600; color: #d32f2f; background: #ffebee; }
-        .mf-body { padding: 20px; }
-        .fakta-title { color: var(--hijau-daun); font-weight: 600; margin-top: 10px; display: block; }
+        .mf-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .mf-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .mf-mitos { background: #fee2e2; color: #b91c1c; padding: 15px; font-weight: 600; }
+        .mf-fakta { padding: 20px; border-left: 4px solid var(--hijau-daun); }
 
-        section { padding: 80px 5%; }
-        .section-title { text-align: center; margin-bottom: 50px; color: var(--biru-utama); }
-        
-        @media (max-width: 768px) { .grid-lifestyle { grid-template-columns: 1fr; } }
+        footer { background: var(--biru-utama); color: white; text-align: center; padding: 30px; margin-top: 40px; }
+
+        @media (max-width: 600px) { .piring-visual { width: 200px; height: 200px; margin: 0 auto; } }
     </style>
 </head>
 <body>
@@ -92,114 +104,21 @@
         <ul class="nav-links">
             <li><a href="#">Beranda</a></li>
             <li class="dropdown">
-                <span class="dropbtn">Pusat Penyakit ▾</span>
+                <a href="#" class="dropbtn">Pusat Penyakit ▾</a>
                 <div class="dropdown-content">
-                    <a href="#penyakit">Diabetes</a>
-                    <a href="#penyakit">Hipertensi</a>
-                    <a href="#penyakit">Obesitas</a>
-                    <a href="#penyakit">Kolesterol</a>
+                    <a href="#">Diabetes</a>
+                    <a href="#">Hipertensi</a>
+                    <a href="#">Obesitas</a>
+                    <a href="#">Kolesterol</a>
                 </div>
             </li>
-            <li><a href="#kalkulator">Cek Risiko</a></li>
-            <li><a href="#lifestyle">Gaya Hidup</a></li>
-            <li><a href="#mitos">Mitos vs Fakta</a></li>
+            <li><a href="#piringku">Cek Piringku</a></li>
+            <li><a href="#kamus">Kamus</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Kenali Tubuhmu, <br>Cegah Penyakit Metabolik</h1>
-        <p>Narasi edukasi sederhana untuk hidup lebih lama dan bermakna.</p>
-        <a href="#kalkulator" class="btn-utama">Cek Risiko Sekarang</a>
-    </header>
-
-    <div class="stats-container">
-        <div class="stat-box"><h2>10.9%</h2><p>Prevalensi Diabetes</p></div>
-        <div class="stat-box"><h2>34.1%</h2><p>Angka Hipertensi</p></div>
-        <div class="stat-box"><h2>1 dari 3</h2><p>Orang Obesitas</p></div>
-        <div class="stat-box"><h2>🚶30m</h2><p>Jalan Kaki Harian</p></div>
-    </div>
-
-    <section id="kalkulator">
-        <h2 class="section-title">🔍 Kalkulator Risiko Metabolik</h2>
-        <div style="max-width: 500px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <p>Usia: <input type="number" id="usia" placeholder="Tahun" style="width:100%; padding:10px; margin:10px 0; border: 1px solid #ddd; border-radius: 5px;"></p>
-            <p>Lingkar Perut (cm): <input type="number" id="lingkar" placeholder="Ukur di pusar" style="width:100%; padding:10px; margin:10px 0; border: 1px solid #ddd; border-radius: 5px;"></p>
-            <p>Riwayat Keluarga: 
-                <select id="riwayat" style="width:100%; padding:10px; margin:10px 0; border: 1px solid #ddd; border-radius: 5px;">
-                    <option value="0">Tidak Ada</option>
-                    <option value="1">Ada (Diabetes/Hipertensi)</option>
-                </select>
-            </p>
-            <button onclick="hitungRisiko()" class="btn-utama" style="width:100%; margin-top:10px;">Lihat Hasil</button>
-            <div id="hasilRisiko" style="margin-top:20px; display:none; padding:15px; border-radius:10px;"></div>
-        </div>
-    </section>
-
-    <section id="lifestyle" style="background: var(--biru-muda);">
-        <h2 class="section-title">🏃 Gaya Hidup Sehat</h2>
-        <div class="grid-lifestyle">
-            <div class="card-lifestyle">
-                <h3>💡 Tips Olahraga Ringan</h3>
-                <p>Tidak perlu ke gym! Anda bisa mulai dengan:</p>
-                <ul>
-                    <li><strong>Jalan Kaki:</strong> 30 menit setiap pagi (sekitar 3.000-5.000 langkah).</li>
-                    <li><strong>Peregangan:</strong> Lakukan setiap 2 jam sekali jika Anda bekerja duduk.</li>
-                    <li><strong>Naik Tangga:</strong> Gunakan tangga daripada lift untuk melatih otot kaki.</li>
-                </ul>
-            </div>
-            <div class="card-lifestyle">
-                <h3>🍲 Resep Lokal Sehat</h3>
-                <p><strong>Pepes Ikan Bumbu Kuning</strong></p>
-                <small>Tanpa santan, tanpa digoreng.</small>
-                <p>Gunakan kunyit, jahe, dan salam untuk rasa alami. Ikan kaya akan Omega-3 yang baik untuk pembuluh darah Anda.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="mitos">
-        <h2 class="section-title">📢 Mitos vs Fakta</h2>
-        <div class="mitos-fakta-grid">
-            <div class="mf-card">
-                <div class="mf-header">🚩 MITOS</div>
-                <div class="mf-body">
-                    <p>"Makan sate kambing bikin darah tinggi seketika."</p>
-                    <span class="fakta-title">✅ FAKTA:</span>
-                    <p>Daging kambing punya kolesterol mirip sapi. Lonjakan tekanan darah biasanya karena garam berlebih pada bumbu kacang/kecap dan porsi makan berlebih.</p>
-                </div>
-            </div>
-            <div class="mf-card">
-                <div class="mf-header">🚩 MITOS</div>
-                <div class="mf-body">
-                    <p>"Hanya orang tua yang bisa kena diabetes."</p>
-                    <span class="fakta-title">✅ FAKTA:</span>
-                    <p>Akibat gaya hidup sedentari dan minuman manis kekinian, anak muda usia 20-an kini banyak yang terdiagnosa diabetes tipe 2.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="text-align: center; padding: 50px; background: var(--biru-utama); color: white;">
-        <p>Narasi Edukasi &copy; 2026 | Sahabat Sehat Metabolik Anda</p>
-    </footer>
-
-    <script>
-        function hitungRisiko() {
-            const usia = document.getElementById('usia').value;
-            const lingkar = document.getElementById('lingkar').value;
-            const riwayat = document.getElementById('riwayat').value;
-            const hasil = document.getElementById('hasilRisiko');
-
-            if(!usia || !lingkar) { alert("Isi data dulu ya!"); return; }
-
-            hasil.style.display = "block";
-            if(lingkar > 90 || usia > 45) {
-                hasil.style.backgroundColor = "#fff3cd";
-                hasil.innerHTML = "<b>Saran:</b> Risiko Anda tergolong perlu perhatian. Cobalah kurangi nasi putih dan rutin jalan kaki 30 menit.";
-            } else {
-                hasil.style.backgroundColor = "#d4edda";
-                hasil.innerHTML = "<b>Saran:</b> Risiko Anda saat ini rendah. Pertahankan pola makan Isi Piringku ya!";
-            }
-        }
-    </script>
-</body>
-</html>
+        <h1>Bentuk Narasi Sehatmu</h1>
+        <p>Edukasi penyakit metabolik dengan cara yang ramah dan menyenangkan.</p>
+        <div style="margin: 30px 0;">
+            <span style="margin
